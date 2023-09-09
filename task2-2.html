@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Artisan Marketplace</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Local Artisan Marketplace</h1>
+    </header>
+    <div id="app">
+        <div class="product-container">
+            <div v-for="(product, index) in products" :key="index" class="product-card">
+                <img class="product-image" :src="product.image" :alt="product.name">
+                <h2>{{ product.name }}</h2>
+                <p>{{ product.description }}</p>
+                <p>Price: ${{ product.price.toFixed(2) }}</p>
+                <button @click="addToCart(product)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js"></script>
+</body>
+</html>
